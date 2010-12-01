@@ -4,7 +4,7 @@ require "posterous-ruby/version"
 
 Gem::Specification.new do |s|
   s.name        = "posterous-ruby"
-  s.version     = Posterous::Ruby::VERSION
+  s.version     = Posterous::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Guilherme Reis Campos"]
   s.email       = ["guilhermekbsa@gmail.com"]
