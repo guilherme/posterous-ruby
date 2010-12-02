@@ -11,7 +11,7 @@ describe Posterous::Posterous do
   end
   
 
-  describe "#authenticate!" do
+  describe "#request_token!" do
     context "valid user_name/password" do
       before(:all) do 
         @user_name = "invalid"
@@ -20,7 +20,7 @@ describe Posterous::Posterous do
         FakeWeb.register_uri(:get, "http://#{@user_name}:#{@password}@posterous.com/api/2/auth/token", :body => '{"api_token": "authenticated"}')
       end
       it "should load api_token" do 
-        @posterous.authenticate!
+        @posterous.request_token!
         @posterous.api_token.should == "authenticated"
       end
       after(:all) do
@@ -36,7 +36,7 @@ describe Posterous::Posterous do
         FakeWeb.register_uri(:get, "http://#{@user_name}:#{@password}@posterous.com/api/2/auth/token", :body => '{"error":"Unauthorized"}')
       end
       it "should raise an Posterous::AuthenticationFailure exception when user_name/password is invalid" do
-        lambda { @posterous.authenticate! }.should raise_exception(Posterous::AuthenticationFailure)
+        lambda { @posterous.request_token! }.should raise_exception(Posterous::AuthenticationFailure)
       end
       after(:all) do
         FakeWeb.clean_registry

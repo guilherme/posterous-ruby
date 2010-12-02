@@ -11,7 +11,7 @@ module Posterous
       @password  = password
     end
 
-    def authenticate!
+    def request_token!
       Net::HTTP.start("posterous.com") do |http|
         req = Net::HTTP::Get.new("/api/2/auth/token")
         req.basic_auth(user_name,password)
