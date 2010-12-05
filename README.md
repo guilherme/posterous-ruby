@@ -1,6 +1,10 @@
 # What is posterous-ruby ?
 Posterous-ruby it's an implementation of Posterous API 2.0 on api, that make easy to retrieve and post informations on posterous.
 
+
+# Observation
+This gem is made by principle just learning, so it's currently experimental.
+
 # TODO:
 
 1. Posts (Read/Create/Destroy)
