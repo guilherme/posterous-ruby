@@ -8,3 +8,19 @@ RSpec.configure do |config|
     FakeWeb.allow_net_connect = true
   end
 end
+
+
+module UserHelper
+
+  def valid_user_attrs 
+    {
+      "id"            => '1234',
+      "firstname"     => "Guilherme",
+      "lastname"      => "Reis",
+      "nickname"      => "kbsa",
+      "profile_pic"   => "",
+      "last_activity" => "2010/12/05 02:58:21 -0300"
+    }
+  end
+
+end
